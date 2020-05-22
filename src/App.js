@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from './Header';
+import Navbar from './Navbar';
 import './App.css';
 
 function App() {
   return (
     <section>
       <div class="container">
-        <Header />
+        <Navbar />
         <div class="row index-body row-md-5">
           <div class="col-md-4"></div>
           <div class="index-body-center col-md-4">
