@@ -17,7 +17,10 @@ const NavItem = ({ label, children }) => {
             >
                 {label}
             </a>
-            <div class="menu-nav-dropdown" style={!open ? {display: "none"} : {display: "block"}}>
+            <div
+                class="menu-nav-dropdown"
+                style={!open ? { display: "none" } : { display: "block" }}
+            >
                 {open && children}
             </div>
         </div>
