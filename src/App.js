@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import HomePage from './HomePage';
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,23 +10,28 @@ import './App.css';
 
 function App() {
   return (
-    <section>
-      <div className="container">
+    <div className="main">
+      <Router>
         <Navbar />
-        <div className="row index-body row-md-5">
-          <div className="col-md-4"></div>
-          <div className="index-body-center col-md-4">
-            <input
-              type="text"
-              className="index-input"
-              placeholder="Search for your favorite team.">  
-            </input>
-          </div>
-          <div className="col-md-4"></div>
-        </div>
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route path="/rankings">
 
-      </div>
-    </section>
+          </Route>
+          <Route path="/teams">
+
+          </Route>
+          <Route path="/schedule">
+
+          </Route>
+          <Route path="/historical">
+
+          </Route>
+        </Switch>
+      </Router>
+    </div>
   );
 }
 
