@@ -1,4 +1,9 @@
-.teams-container {
+.teams-header {
+    height: 50px;
+    flex-basis: 100;
+}
+
+.teams-mosaic {
     display: flex;
     flex-wrap: wrap;
 }
