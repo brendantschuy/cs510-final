@@ -5,6 +5,44 @@
     flex-wrap: wrap;
 }
 
+.rankings-list li {
+    height: 25px;
+}
+
+.rankings-list li:before {
+    background: blue;
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 20px;
+    margin-left: -20px;
+    z-index: -1;
+}
+
+.rankings-list li:nth-child(odd) {
+    background-color: lightgray;
+    margin-left: -20px;
+}
+
+.rankings-list li:nth-child(even) {
+    background-color: white;
+    margin-left: -20px;
+}
+
+.rankings-list li:nth-child(odd):before {
+    background-color: lightgray;
+}
+
+.rankings-list li:nth-child(even):before {
+    background-color: white;
+}
+
+.rankings-list {
+    list-style-type: none;
+    margin: auto;
+}
+
 .rankings-display {
     flex: 1;
 }
@@ -16,14 +54,23 @@
 .rankings-poll-toggle-button {
     width: 50%;
     background-color: lightgray;
+    color: gray;
+    border-radius: 10px;
+    border-width: 1px 1px 1px 0;
+}
+
+.rankings-poll-toggle-button:not(.active):hover {
+    text-shadow: 1px 0px 0px black;
 }
 
 .rankings-poll-toggle-button.active {
+    color: black;
     background-color: gray;
+    font-weight: 700;
 }
 
 .rankings-text {
     float: left;
-    width: 33%;
+    width: 25%;
     text-align: center;
 }

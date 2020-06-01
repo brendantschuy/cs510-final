@@ -45,14 +45,15 @@ const RankingsPage = () => {
                 <ToggleButton text="Coaches" toggle={togglePoll} isActive={pollType == 2}/>
             </div>
             <div className="rankings-display">
-                <ol>
-                    {displayData.map(({id, school, firstPlaceVotes, points}) => 
+                <ul className="rankings-list">
+                    {displayData.map(({id, rank, school, firstPlaceVotes, points}) => 
                         <li key={id}>
-                            <span className="rankings-text">{school}</span>
+                            <span className="rankings-text">{rank}</span>
+                            <span className="rankings-text">{school.replace("State", "St.")}</span>
                             <span className="rankings-text">{firstPlaceVotes}</span>
                             <span className="rankings-text">{points}</span>
                         </li>)}
-                </ol>
+                </ul>
             </div>
         </div>
     )
