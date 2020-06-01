@@ -8,7 +8,7 @@ const NavItem = ({ label, children }) => {
 
     return (
         <div
-            class="menu-nav-item"
+            className="menu-nav-item"
             onMouseEnter={() => setOpen(!open)}
         >
             <a
@@ -18,7 +18,7 @@ const NavItem = ({ label, children }) => {
                 {label}
             </a>
             <div
-                class="menu-nav-dropdown"
+                className="menu-nav-dropdown"
                 style={!open ? { display: "none" } : { display: "block" }}
             >
                 {open && children}
