@@ -44,8 +44,6 @@
   text-align: center;
 }
 
-
-
 .index-body {
   height: 500px;
 }
@@ -57,7 +55,7 @@
 
 .index-input {
   width: 100%;
-  text-align:center;
+  text-align: center;
   box-shadow: 0 0 20px gray;
 }
 
@@ -67,6 +65,10 @@
   height: 100%;
   flex: 1;
   text-align: center;
+}
+
+.menu-nav-item span {
+  line-height: 80px;
 }
 
 .menu-nav-item:hover {

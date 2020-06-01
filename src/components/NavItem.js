@@ -11,12 +11,14 @@ const NavItem = ({ label, children }) => {
             className="menu-nav-item"
             onMouseEnter={() => setOpen(!open)}
         >
-            <a
-                href={`./${label}`}
-                className="menu-nav-item-link"
-            >
-                {label}
-            </a>
+            <span>
+                <a
+                    href={`./${label}`}
+                    className="menu-nav-item-link"
+                >
+                    {label}
+                </a>
+            </span>
             <div
                 className="menu-nav-dropdown"
                 style={!open ? { display: "none" } : { display: "block" }}
