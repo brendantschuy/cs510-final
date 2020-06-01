@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import ToggleButton from './ToggleButton';
 import '../rankings.css';
 
 /* rank, school [name], conference, firstPlaceVotes, points */
-
-const rankingsUrl = "https://api.collegefootballdata.com/rankings?year=2019&seasonType=regular";
 
 const RankingsPage = () => {
 
@@ -12,7 +11,6 @@ const RankingsPage = () => {
     const [currentYear, setCurrentYear] = useState(2019);
     const [currentWeek, setCurrentWeek] = useState(15);
     const [pollType, setPollType] = useState(1);
-    const [update, setUpdate] = useState([]);
 
     const fetchData = useCallback(async (poll) => {
         const url = `https://api.collegefootballdata.com/rankings?year=${currentYear}&seasonType=regular`;
@@ -43,8 +41,8 @@ const RankingsPage = () => {
     return (
         <div className="rankings-container">
             <div className="rankings-poll-toggle">
-                <button className="rankings-poll-toggle-button" onClick={() => togglePoll()}>AP</button>
-                <button className="rankings-poll-toggle-button" onClick={() => togglePoll()}>Coaches</button>
+                <ToggleButton text="AP" toggle={togglePoll} isActive={pollType == 1} />
+                <ToggleButton text="Coaches" toggle={togglePoll} isActive={pollType == 2}/>
             </div>
             <div className="rankings-display">
                 <ol>

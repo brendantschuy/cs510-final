@@ -15,10 +15,11 @@
 
 .rankings-poll-toggle-button {
     width: 50%;
+    background-color: lightgray;
 }
 
 .rankings-poll-toggle-button.active {
-    background-color: red;
+    background-color: gray;
 }
 
 .rankings-text {
