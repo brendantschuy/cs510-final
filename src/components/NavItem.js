@@ -12,7 +12,7 @@ const NavItem = ({ label, children }) => {
             onMouseEnter={() => setOpen(!open)}
         >
             <a
-                href="#"
+                href={`./${label}`}
                 className="menu-nav-item-link"
             >
                 {label}

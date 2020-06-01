@@ -1,9 +1,13 @@
 import React from 'react';
 
-const Logo = () => 
+const Logo = () =>
     <div className="index-header-center">
         <span className="header-text">CFB STATS</span>
-        <img src={require('./images/football.png')} id="header-img"></img>
+        <img
+            src={require('../images/football.png')}
+            id="header-img"
+            alt="Header Logo"
+        />
     </div>
 
 export default Logo;

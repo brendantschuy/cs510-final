@@ -3,7 +3,7 @@ import NavItem from './NavItem';
 import DropDownItem from './DropDownItem';
 // import RankingsNavItem from './RankingsNavItem';
 import Logo from './Logo';
-import './App.css';
+import '../App.css';
 
 const Navbar = ({ teamColors /*WIP*/ }) =>
     <nav>

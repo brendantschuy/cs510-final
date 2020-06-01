@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import HomePage from './components/HomePage';
+import RankingsPage from './components/RankingsPage';
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,7 +19,7 @@ function App() {
             <HomePage />
           </Route>
           <Route path="/rankings">
-
+            <RankingsPage />
           </Route>
           <Route path="/teams">
 
