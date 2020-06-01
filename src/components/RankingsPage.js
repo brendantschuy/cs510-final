@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import '../rankings.css';
 
 /* rank, school [name], conference, firstPlaceVotes, points */
 
@@ -7,34 +8,52 @@ const rankingsUrl = "https://api.collegefootballdata.com/rankings?year=2019&seas
 const RankingsPage = () => {
 
     const [data, setData] = useState([]);
-    let [annualData, setAnnualData] = useState([]);
+    const [displayData, setDisplayData] = useState([]);
+    const [currentYear, setCurrentYear] = useState(2019);
+    const [currentWeek, setCurrentWeek] = useState(15);
+    const [pollType, setPollType] = useState(1);
+    const [update, setUpdate] = useState([]);
 
-    const fetchData = useCallback(async () => {
-        fetch(rankingsUrl)
+    const fetchData = useCallback(async (poll) => {
+        const url = `https://api.collegefootballdata.com/rankings?year=${currentYear}&seasonType=regular`;
+        fetch(url)
             .then(res => res.json())
             .then(res => {
                 console.log(res);
                 setData(res);
-                selectWeek(res);
+                selectTime();
+                setDisplayData(res[currentWeek].polls[poll].ranks);
             });
-    }, []);
+    }, []); //use empty array to avoid infinite loop
 
-    const selectYear = (res, year = 2020) => 
-        `https://api.collegefootballdata.com/rankings?year=${year}&seasonType=regular`;
+    const togglePoll = () => {
+        /* 1 = AP, 2 = Coaches */
+        setPollType(pollType == 1 ? 2 : 1);
+        console.log(`updated polltype to: ${pollType}`);
+    }
 
-    const selectWeek = (res, week = 15) => {
-        setAnnualData(res[week].polls[1].ranks);
+    const selectTime = (year = 2019, week = 15) => {
+        setCurrentYear(year);
     }
 
     useEffect(() => {
-        fetchData();
-    }, []);
+        fetchData(pollType);
+    }, [currentWeek, currentYear, pollType]);
 
     return (
-        <div>
-            <div>
+        <div className="rankings-container">
+            <div className="rankings-poll-toggle">
+                <button className="rankings-poll-toggle-button" onClick={() => togglePoll()}>AP</button>
+                <button className="rankings-poll-toggle-button" onClick={() => togglePoll()}>Coaches</button>
+            </div>
+            <div className="rankings-display">
                 <ol>
-                {annualData.map(item => <li key={item.id}>{item.school}</li>)}
+                    {displayData.map(({id, school, firstPlaceVotes, points}) => 
+                        <li key={id}>
+                            <span className="rankings-text">{school}</span>
+                            <span className="rankings-text">{firstPlaceVotes}</span>
+                            <span className="rankings-text">{points}</span>
+                        </li>)}
                 </ol>
             </div>
         </div>

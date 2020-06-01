@@ -1,0 +1,28 @@
+.rankings-container {
+    width: 500px;
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.rankings-display {
+    flex: 1;
+}
+
+.rankings-poll-toggle {
+    width: 100%;
+}
+
+.rankings-poll-toggle-button {
+    width: 50%;
+}
+
+.rankings-poll-toggle-button.active {
+    background-color: red;
+}
+
+.rankings-text {
+    float: left;
+    width: 33%;
+    text-align: center;
+}
