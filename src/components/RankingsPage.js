@@ -26,7 +26,7 @@ const RankingsPage = () => {
 
     const togglePoll = () => {
         /* 1 = AP, 2 = Coaches */
-        setPollType(pollType == 1 ? 2 : 1);
+        setPollType(pollType === 1 ? 2 : 1);
         console.log(`updated polltype to: ${pollType}`);
     }
 
@@ -41,8 +41,8 @@ const RankingsPage = () => {
     return (
         <div className="rankings-container">
             <div className="rankings-poll-toggle">
-                <ToggleButton text="AP" toggle={togglePoll} isActive={pollType == 1} />
-                <ToggleButton text="Coaches" toggle={togglePoll} isActive={pollType == 2}/>
+                <ToggleButton text="AP" toggle={togglePoll} isActive={pollType === 1} />
+                <ToggleButton text="Coaches" toggle={togglePoll} isActive={pollType === 2}/>
             </div>
             <div className="rankings-display">
                 <ul className="rankings-list">
