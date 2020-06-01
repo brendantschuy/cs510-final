@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import HomePage from './components/HomePage';
 import RankingsPage from './components/RankingsPage';
+import TeamsPage from './components/TeamsPage';
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,10 +20,10 @@ function App() {
             <HomePage />
           </Route>
           <Route path="/rankings">
-            <RankingsPage />
+            <RankingsPage activePoll="1" />
           </Route>
           <Route path="/teams">
-
+            <TeamsPage />
           </Route>
           <Route path="/schedule">
 

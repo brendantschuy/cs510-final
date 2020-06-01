@@ -1,0 +1,15 @@
+.teams-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.team-square {
+    height: 100px;
+    min-width: 8.33%;
+    text-align: center;
+    border: 5px solid black;
+}
+
+.team-square span {
+    line-height: 90px;
+}

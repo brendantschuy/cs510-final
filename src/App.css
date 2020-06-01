@@ -87,9 +87,9 @@
   border-radius: 20px;
   background-color: gray;
   height: 30px;
-  pointer-events: none;
 }
 
 .menu-nav-dropdown-item:hover {
-  background-color: gray;
+  background-color: black;
+  color: white;
 }
