@@ -1,22 +1,27 @@
 import React from 'react';
 import Navbar from './Navbar';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
 import './App.css';
 
 function App() {
   return (
     <section>
-      <div class="container">
+      <div className="container">
         <Navbar />
-        <div class="row index-body row-md-5">
-          <div class="col-md-4"></div>
-          <div class="index-body-center col-md-4">
+        <div className="row index-body row-md-5">
+          <div className="col-md-4"></div>
+          <div className="index-body-center col-md-4">
             <input
               type="text"
-              class="index-input"
+              className="index-input"
               placeholder="Search for your favorite team.">  
             </input>
           </div>
-          <div class="col-md-4"></div>
+          <div className="col-md-4"></div>
         </div>
 
       </div>

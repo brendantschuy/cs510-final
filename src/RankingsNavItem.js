@@ -12,7 +12,7 @@ const RankingsNavItem = () => {
     if(dropdown) {
         return <div>
                 <NavItem label="Rankings"></NavItem>
-                <div class="button-dropdown">Hello world!</div>
+                <div className="button-dropdown">Hello world!</div>
             </div>
     }
     else {

@@ -7,8 +7,8 @@ import './App.css';
 
 const Navbar = ({ teamColors /*WIP*/ }) =>
     <nav>
-        <div class="row index-header">
-            <div class="index-header-col col-md-5">
+        <div className="row index-header">
+            <div className="index-header-col col-md-5">
                 <NavItem label="Rankings">
                     <DropDownItem text="AP" />
                     <DropDownItem text="Coaches" />
@@ -22,10 +22,10 @@ const Navbar = ({ teamColors /*WIP*/ }) =>
                     <DropDownItem text="By Conference" />
                 </NavItem>
             </div>
-            <div class="index-header-center col-md-2">
+            <div className="index-header-center col-md-2">
                 <Logo />
             </div>
-            <div class="index-header-col col-md-5">
+            <div className="index-header-col col-md-5">
                 <NavItem label="Schedule" />
                 <NavItem label="Historical">
                     <DropDownItem text="2020" />
