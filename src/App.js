@@ -5,7 +5,7 @@ import RankingsPage from './components/RankingsPage';
 import TeamsPage from './components/TeamsPage';
 import TeamDetails from './components/TeamDetails';
 import SchedulePage from './components/SchedulePage';
-import HistoricalPage from './components/HistoricalPage';
+import ConferencesPage from './components/ConferencesPage';
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/teams" component={TeamsPage} />
           <Route path="/teams/:teamName" component={TeamDetails} />
           <Route path="/schedule" component={SchedulePage} />
-          <Route path="/historical" component={HistoricalPage} />
+          <Route path="/conferences" component={ConferencesPage} />
         </Switch>
       </Router>
     </div>
