@@ -8,7 +8,7 @@ const TeamsPage = () => {
     const [data, setData] = useState([]);
     const [sortDirection, setSortDirection] = useState("A-Z");
 
-    const year = 2020;
+    const year = 2019;
 
     const sortDirections = [
         "A-Z",

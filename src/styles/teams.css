@@ -27,3 +27,42 @@
 .team-square.faded {
     filter: brightness(20%);
 }
+
+/* DETAILS */
+.details-container {
+    width: 500px;
+    height: 1000px;
+    padding-top: 20px;
+    margin: auto;
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.details-title {
+    width: 100%;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.details-heading {
+    font-size: 45px;
+}
+
+.details-sub-heading {
+    font-size: 22px;
+    line-height: 50%;
+}
+
+.details-logo {
+    /* position: absolute;
+    top: 15px;
+    left: 37%; */
+    width: 120px;
+    height: 120px;
+    clip-path: circle(60px at center);
+    background-color: white;
+}

@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import HomePage from './components/HomePage';
 import RankingsPage from './components/RankingsPage';
 import TeamsPage from './components/TeamsPage';
+import TeamDetails from './components/TeamDetails';
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,18 +17,11 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path="/">
-            <HomePage />
-          </Route>
-          <Route path="/rankings">
-            <RankingsPage activePoll="2" />
-          </Route>
-          <Route path="/teams">
-            <TeamsPage />
-          </Route>
-          <Route path="/schedule">
-
-          </Route>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/rankings" component={RankingsPage} />
+          <Route exact path="/teams" component={TeamsPage} />
+          <Route path="/teams/:teamName" component={TeamDetails} />
+          <Route path="/schedule" component={TeamDetails} />
           <Route path="/historical">
 
           </Route>
