@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import ToggleButton from './ToggleButton';
+import Ranking from './Ranking';
 import '../styles/rankings.css';
 
 /* rank, school [name], conference, firstPlaceVotes, points */
@@ -42,17 +43,13 @@ const RankingsPage = () => {
         <div className="rankings-container">
             <div className="rankings-poll-toggle">
                 <ToggleButton text="AP" toggle={togglePoll} isActive={pollType === 1} />
-                <ToggleButton text="Coaches" toggle={togglePoll} isActive={pollType === 2}/>
+                <ToggleButton text="Coaches" toggle={togglePoll} isActive={pollType === 2} />
             </div>
             <div className="rankings-display">
                 <ul className="rankings-list">
-                    {displayData.map(({id, rank, school, firstPlaceVotes, points}) => 
-                        <li key={id}>
-                            <span className="rankings-text">{rank}</span>
-                            <span className="rankings-text">{school.replace("State", "St.")}</span>
-                            <span className="rankings-text">{firstPlaceVotes}</span>
-                            <span className="rankings-text">{points}</span>
-                        </li>)}
+                    {displayData.map(school =>
+                        <Ranking data={school} />
+                    )}
                 </ul>
             </div>
         </div>

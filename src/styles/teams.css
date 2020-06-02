@@ -25,7 +25,7 @@
 }
 
 .team-square.faded {
-    filter: brightness(20%);
+    filter: brightness(20%) blur(2px);
 }
 
 .team-square a {

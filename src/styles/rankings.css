@@ -74,3 +74,13 @@
     width: 25%;
     text-align: center;
 }
+
+.rankings-text-link {
+    text-decoration: none;
+    float: left;
+    color: black;
+}
+
+.rankings-text-link:hover {
+    color: black;
+}
