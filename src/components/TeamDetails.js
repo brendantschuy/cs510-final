@@ -30,8 +30,9 @@ const TeamDetails = ({ match, location }) => {
     const logo2 = logos[1];
 
     const fetchData = useCallback(async () => {
-        const url = `https://api.collegefootballdata.com/records?year=${year}&team=${teamName.replace(" ","%20")}`;
-        fetch(url)
+        const url1 = `https://api.collegefootballdata.com/records?year=${year}&team=${teamName.replace(" ","%20")}`;
+        const url2 = `https://api.collegefootballdata.com/teams/fbs?year=${year}`;
+        fetch(url1)
             .then(res => res.json())
             .then(res => {
                 console.log(res);
@@ -43,6 +44,13 @@ const TeamDetails = ({ match, location }) => {
                     res[0].conference]
                 );
             });
+        fetch(url2)
+            .then(res => res.json())
+            .then(res => {
+                console.log(res);
+                setData(...data, res);
+                //setDisplay(...display, )
+            })
     }, []); //use empty array to avoid infinite loop
 
     useEffect(() => {

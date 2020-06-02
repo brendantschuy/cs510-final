@@ -70,3 +70,7 @@
     clip-path: circle(60px at center);
     background-color: white;
 }
+
+.spinner-border {
+    margin: auto;
+}

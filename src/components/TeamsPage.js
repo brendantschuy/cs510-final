@@ -1,12 +1,15 @@
 import React, { useEffect, useCallback, useState } from 'react';
 import TeamSelect from './TeamSelect';
 import TeamPanel from './TeamPanel';
+import Spinner from 'react-bootstrap/Spinner'
+
 import '../styles/teams.css';
 
 const TeamsPage = () => {
 
     const [data, setData] = useState([]);
     const [sortDirection, setSortDirection] = useState("A-Z");
+    const [loading, setLoading] = useState(true);
 
     const year = 2019;
 
@@ -18,6 +21,7 @@ const TeamsPage = () => {
     ];
 
     const conferences = [
+        "(none)",
         "American Athletic",
         "ACC",
         "Big 12",
@@ -40,6 +44,7 @@ const TeamsPage = () => {
                     return { ...team, highlight: true };
                 });
                 setData(res);
+                setLoading(false);
                 console.log(res);
             });
     }, []); //use empty array to avoid infinite loop
@@ -62,13 +67,13 @@ const TeamsPage = () => {
             sortedData = data
                 .sort((a, b) => {
                     return a.conference <= b.conference ? -1 : 1;
-                });            
+                });
         }
         else if (sort == "Z-A by Conference") {
             sortedData = data
                 .sort((a, b) => {
                     return a.conference >= b.conference ? -1 : 1;
-                });            
+                });
         }
         setData(sortedData);
         setSortDirection(sort);
@@ -77,9 +82,18 @@ const TeamsPage = () => {
     const highlightConferences = ({ target: { value: conf } }) => {
         console.log("conf = ", conf);
         const highlightedData = data;
-        highlightedData.forEach(team => {
-            team.highlight = team.conference == conf;
-        });
+
+        if (conf == "(none)") {
+            highlightedData.forEach(team => {
+                team.highlight = true;
+            })
+        }
+        else {
+            highlightedData.forEach(team => {
+                team.highlight = team.conference == conf;
+            });
+        }
+
         setData(highlightedData);
         setSortDirection({});
     }
@@ -91,17 +105,18 @@ const TeamsPage = () => {
     return (
         <div className="teams-container">
             <div className="teams-header">
-                <span style={{ float: "left" }}>Highlight: 
+                <span style={{ float: "left" }}>Highlight:
                     <TeamSelect opts={conferences} onSelect={highlightConferences} />
                 </span>
-                <span style={{ float: "right" }}>Sort by: 
+                <span style={{ float: "right" }}>Sort by:
                     <TeamSelect opts={sortDirections} onSelect={sortDisplay} />
                 </span>
             </div>
             <div className="teams-mosaic">
+                {loading && <Spinner animation="border" role="status"/>}
                 {data.map(team => {
                     return <TeamPanel props={team} />
-                    })}
+                })}
             </div>
         </div>
     );
