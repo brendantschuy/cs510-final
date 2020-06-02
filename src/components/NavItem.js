@@ -11,7 +11,7 @@ const NavItem = ({ label, children }) => {
         >
             <span>
                 <a
-                    href={`./${label.toLowerCase()}`}
+                    href={`/${label.toLowerCase()}`}
                     className="menu-nav-item-link"
                 >
                     {label}

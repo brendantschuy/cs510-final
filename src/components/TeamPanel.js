@@ -5,7 +5,7 @@ const TeamPanel = props => {
     // console.log("~~~~data = ", JSON.stringify(props));
     // console.log("data[0] = ", props.props.id);
 
-    const { id, color, alt_color, abbreviation, highlight } = props.props;
+    const { id, color, alt_color, abbreviation, highlight, school } = props.props;
 
     console.log(`HIGHLIGHT FOR ${abbreviation} = ${highlight}`);
     /* Ensures primary & secondary colors are distinct enough to be discernible.
@@ -37,12 +37,16 @@ const TeamPanel = props => {
             key={id}
             className={`${highlight ? "team-square" : "team-square faded"}`}
             style={{
-                color: colorDiff(alt_color, color) ? `${alt_color}` : "#FFFFFF",
                 backgroundColor: `${color}`,
                 borderColor: `${alt_color}`,
             }}
         >
-            <span>{abbreviation}</span>
+            <a
+                href={`/teams/${school}`}
+                style={{color: colorDiff(alt_color, color) ? `${alt_color}` : "#FFFFFF"}}
+            >
+                <span>{abbreviation}</span>
+            </a>
         </div>
     );
 };

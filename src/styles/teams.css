@@ -28,6 +28,10 @@
     filter: brightness(20%);
 }
 
+.team-square a {
+    text-decoration: none;
+}
+
 /* DETAILS */
 .details-container {
     width: 500px;
