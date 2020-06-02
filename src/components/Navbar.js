@@ -9,12 +9,12 @@ const Navbar = ({ teamColors /*WIP*/ }) =>
     <nav>
         <div className="row index-header">
             <div className="index-header-col col-md-5">
-                <NavItem label="Rankings">
+                <NavItem label="RANKINGS">
                     <DropDownItem text="AP" />
                     <DropDownItem text="Coaches" />
                     <DropDownItem text="CFP" />
                 </NavItem>
-                <NavItem label="Teams">
+                <NavItem label="TEAMS">
                     <DropDownItem text="Division I FBS" />
                     <DropDownItem text="Division I FCS" />
                     <DropDownItem text="Division II" />
@@ -26,8 +26,8 @@ const Navbar = ({ teamColors /*WIP*/ }) =>
                 <Logo />
             </div>
             <div className="index-header-col col-md-5">
-                <NavItem label="Schedule" />
-                <NavItem label="Historical">
+                <NavItem label="SCHEDULE" />
+                <NavItem label="HISTORICAL">
                     <DropDownItem text="2020" />
                     <DropDownItem text="2019" />
                     <DropDownItem text="2018" />

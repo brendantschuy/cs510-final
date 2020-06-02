@@ -20,7 +20,7 @@ function App() {
             <HomePage />
           </Route>
           <Route path="/rankings">
-            <RankingsPage activePoll="1" />
+            <RankingsPage activePoll="2" />
           </Route>
           <Route path="/teams">
             <TeamsPage />
