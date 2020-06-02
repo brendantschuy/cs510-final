@@ -33,6 +33,7 @@
 }
 
 /* DETAILS */
+
 .details-container {
     width: 500px;
     height: 1000px;
@@ -72,5 +73,15 @@
 }
 
 .spinner-border {
+    margin: auto;
+}
+
+/* CONFERENCES */
+
+.conferences-container {
+    width: 800px;
+    background-color: red;
+    display: flex;
+    height: 1000px;
     margin: auto;
 }
