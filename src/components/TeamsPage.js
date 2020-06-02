@@ -23,7 +23,7 @@ const TeamsPage = () => {
         "Big 12",
         "Big Ten",
         "Conference USA",
-        "Independents",
+        "FBS Independents",
         "Mid-American",
         "Mountain West",
         "Pac-12",
