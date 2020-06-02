@@ -1,59 +1,87 @@
 import React, { useEffect, useCallback, useState } from 'react';
-import SortSelect from './SortSelect';
+import TeamSelect from './TeamSelect';
+import TeamPanel from './TeamPanel';
 import '../teams.css';
 
 const TeamsPage = () => {
 
     const [data, setData] = useState([]);
-    const [sortDirection, setSortDirection] = useState(0);
+    const [sortDirection, setSortDirection] = useState("A-Z");
 
     const year = 2020;
 
     const sortDirections = [
         "A-Z",
         "Z-A",
-        "Conference",
-        "State"
-    ]
+        "A-Z by Conference",
+        "Z-A by Conference"
+    ];
 
-    /* Ensures primary & secondary colors are distinct enough to be discernible.
-     * Hex math is not fun in javascript.... */
-    const colorDiff = (color1, color2) => {
-        color1 = color1 ? parseInt(color1.substr(1), 16) : color1;
-        color2 = color2 ? parseInt(color2.substr(1), 16) : color2;
-
-        let c1bb = color1 % 256;
-        let c1gg = (color1 - c1bb) % 65536;
-        let c1rr = color1 - c1gg - c1bb;
-
-        c1gg /= 256;
-        c1rr /= 65536;
-
-        let c2bb = color2 % 256;
-        let c2gg = (color2 - c2bb) % 65536;
-        let c2rr = color2 - c2gg - c2bb;
-
-        c2gg /= 256;
-        c2rr /= 65536;
-
-        const euclidean = Math.sqrt(Math.pow(c1bb - c2bb, 2) + Math.pow(c1gg - c2gg, 2) + Math.pow(c1rr - c2rr, 2));
-        return euclidean > 120;
-    }
+    const conferences = [
+        "American Athletic",
+        "ACC",
+        "Big 12",
+        "Big Ten",
+        "Conference USA",
+        "Independents",
+        "Mid-American",
+        "Mountain West",
+        "Pac-12",
+        "SEC",
+        "Sun Belt"
+    ];
 
     const fetchData = useCallback(async () => {
         const url = `https://api.collegefootballdata.com/teams/fbs?year=${year}`;
         fetch(url)
             .then(res => res.json())
             .then(res => {
-                console.log(res);
+                res = res.map(team => {
+                    return { ...team, highlight: true };
+                });
                 setData(res);
+                console.log(res);
             });
     }, []); //use empty array to avoid infinite loop
 
-    const sortDisplay = () => {
-        const sortedData = data.reverse();
+    const sortDisplay = ({ target: { value: sort } }) => {
+        let sortedData;
+        if (sort == "A-Z") {
+            sortedData = data
+                .sort((a, b) => {
+                    return a.abbreviation <= b.abbreviation ? -1 : 1;
+                });
+        }
+        else if (sort == "Z-A") {
+            sortedData = data
+                .sort((a, b) => {
+                    return a.abbreviation >= b.abbreviation ? -1 : 1;
+                });
+        }
+        else if (sort == "A-Z by Conference") {
+            sortedData = data
+                .sort((a, b) => {
+                    return a.conference <= b.conference ? -1 : 1;
+                });            
+        }
+        else if (sort == "Z-A by Conference") {
+            sortedData = data
+                .sort((a, b) => {
+                    return a.conference >= b.conference ? -1 : 1;
+                });            
+        }
         setData(sortedData);
-        setSortDirection(1);
+        setSortDirection(sort);
+    }
+
+    const highlightConferences = ({ target: { value: conf } }) => {
+        console.log("conf = ", conf);
+        const highlightedData = data;
+        highlightedData.forEach(team => {
+            team.highlight = team.conference == conf;
+        });
+        setData(highlightedData);
+        setSortDirection({});
     }
 
     useEffect(() => {
@@ -63,25 +91,17 @@ const TeamsPage = () => {
     return (
         <div className="teams-container">
             <div className="teams-header">
-                <span style={{float: "left"}}>Teams ordered by: {sortDirection}</span>
-                <span style={{float: "right"}}>Sort by: 
-                    <SortSelect opts={sortDirections} onSelect={sortDisplay}/>
+                <span style={{ float: "left" }}>Highlight: 
+                    <TeamSelect opts={conferences} onSelect={highlightConferences} />
+                </span>
+                <span style={{ float: "right" }}>Sort by: 
+                    <TeamSelect opts={sortDirections} onSelect={sortDisplay} />
                 </span>
             </div>
             <div className="teams-mosaic">
-                {data.map(({ id, abbreviation, mascot, color, alt_color }) =>
-                    <div
-                        key={id}
-                        className="team-square"
-                        style={{
-                            color: colorDiff(alt_color, color) ? `${alt_color}` : "#FFFFFF",
-                            backgroundColor: `${color}FF`,
-                            borderColor: `${alt_color}`,
-                        }}
-                    >
-                        <span>{abbreviation}</span>
-                    </div>
-                )}
+                {data.map(team => {
+                    return <TeamPanel props={team} />
+                    })}
             </div>
         </div>
     );

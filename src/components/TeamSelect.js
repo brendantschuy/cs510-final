@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SortSelect = ({ opts, onSelect }) => {
+const TeamSelect = ({ opts, onSelect }) => {
     return (
         <select onChange={onSelect}>
             {opts.map(opt =>
@@ -10,5 +10,4 @@ const SortSelect = ({ opts, onSelect }) => {
     );
 };
 
-
-export default SortSelect;
+export default TeamSelect;

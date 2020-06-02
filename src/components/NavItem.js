@@ -4,8 +4,6 @@ const NavItem = ({ label, children }) => {
 
     const [open, setOpen] = useState();
 
-
-
     return (
         <div
             className="menu-nav-item"
@@ -21,7 +19,7 @@ const NavItem = ({ label, children }) => {
             </span>
             <div
                 className="menu-nav-dropdown"
-                style={!open ? { display: "none" } : { display: "block" }}
+                style={!open ? { display: "none" } : { display: "none" }}
             >
                 {open && children}
             </div>

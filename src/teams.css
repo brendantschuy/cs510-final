@@ -16,5 +16,14 @@
 }
 
 .team-square span {
+    font-size: 25px;
     line-height: 90px;
+}
+
+.team-square span:hover {
+    text-shadow: 2px 0px 0px gray;
+}
+
+.team-square.faded {
+    filter: brightness(20%);
 }
