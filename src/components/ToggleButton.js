@@ -1,5 +1,5 @@
 import React from 'react';
-import '../rankings.css';
+import '../styles/rankings.css';
 
 const ToggleButton = ({ text, toggle, isActive }) => {
     const inactiveClass = "rankings-poll-toggle-button";

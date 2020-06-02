@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import ToggleButton from './ToggleButton';
-import '../rankings.css';
+import '../styles/rankings.css';
 
 /* rank, school [name], conference, firstPlaceVotes, points */
 

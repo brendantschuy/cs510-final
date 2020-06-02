@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback, useState } from 'react';
 import TeamSelect from './TeamSelect';
 import TeamPanel from './TeamPanel';
-import '../teams.css';
+import '../styles/teams.css';
 
 const TeamsPage = () => {
 
