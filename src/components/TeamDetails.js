@@ -1,4 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import Spinner from 'react-bootstrap/Spinner';
+
+import '../styles/teams.css';
 
 const TeamDetails = ({ colorPalette, match }) => {
 
@@ -6,6 +9,7 @@ const TeamDetails = ({ colorPalette, match }) => {
 
     const [data, setData] = useState([]);
     const [display, setDisplay] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const year = 2019;
 
@@ -16,14 +20,6 @@ const TeamDetails = ({ colorPalette, match }) => {
         fetch(url1)
             .then(res => res.json())
             .then(res => {
-                setData(data => ([
-                    res[0].total.wins,
-                    res[0].total.losses,
-                    res[0].team,
-                    res[0].conference,
-                    ...data
-                ]));
-
                 setDisplay(display => ([
                     res[0].total.wins,
                     res[0].total.losses,
@@ -31,6 +27,7 @@ const TeamDetails = ({ colorPalette, match }) => {
                     res[0].conference,
                     ...display
                 ]));
+                setLoading(false);
 
             });
         fetch(url2)
@@ -53,6 +50,7 @@ const TeamDetails = ({ colorPalette, match }) => {
 
     return (
         <div className="details-container">
+            {loading && <Spinner animation="border" role="status" />}
             <img className="details-logo" src={display[5]}></img>
             <p className="details-title">
                 <span className="details-heading">{display[2]}</span>

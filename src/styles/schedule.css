@@ -3,30 +3,37 @@
 .schedule-container {
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 550px;
     min-height: 500px;
     margin: auto;
-    background-color: lightgray;
+    background-color: #C8C8E0;
     text-align: center;
     padding-top: 20px;
 }
 
 .schedule-game {
     min-height: 50px;
-    background-color: #BBBBBB;
+    background-color: #9798C4;
     margin: 5px;
     line-height: 50px;
+    padding: 5px;
 }
 
 .schedule-game.highlight {
-    background-color: #999999;
+    background-color: #424389;
     margin: 5px;
     font-weight: 700;
+    color: white;
 }
 
 .schedule-search-button {
     width: 150px;
     margin: auto;
+}
+
+.schedule-game.highlight .schedule-game-link {
+    text-decoration: none;
+    color: white;
 }
 
 .schedule-game-link {

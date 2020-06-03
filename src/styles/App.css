@@ -30,7 +30,7 @@
 
 .index-header {
   height: 80px;
-  background-color: lightgray;
+  background-color: #555794;
 }
 
 .index-header-center {
@@ -53,8 +53,11 @@
 }
 
 .index-body-center {
+  width: 100%;
+  margin: auto;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .index-input {
@@ -65,7 +68,7 @@
 
 .menu-nav-item {
   position: relative;
-  background-color: lightgray;
+  background-color: #555794;
   height: 100%;
   flex: 1;
   text-align: center;
@@ -86,7 +89,7 @@
 }
 
 .menu-nav-item:hover {
-  background-color: lightgrey;
+  background-color: #7F81B2;
 }
 
 .menu-nav-dropdown {

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Logo = () =>
-    <a href="./">
+    <a href="/">
         <div className="index-header-center">
             <span className="header-text">CFB STATS</span>
             <img
