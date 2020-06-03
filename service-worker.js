@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/brendantschuy/cs510-finalprecache-manifest.74eb4293a6b1757df1f77080f547eb1c.js"
+  "/brendantschuy/cs510-finalprecache-manifest.d5e4daf2ca7ff332d181873c1895dcb8.js"
 );
 
 self.addEventListener('message', (event) => {
