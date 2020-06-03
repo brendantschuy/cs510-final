@@ -80,8 +80,13 @@
 
 .conferences-container {
     width: 800px;
-    background-color: red;
+    background-color: #EEEEEE;
     display: flex;
+    flex-wrap: wrap;
     height: 1000px;
     margin: auto;
+}
+
+.conference-data {
+    min-width: 400px;
 }
