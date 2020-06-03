@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     width: 550px;
-    min-height: 500px;
+    min-height: 200px;
     margin: auto;
     background-color: #C8C8E0;
     text-align: center;
@@ -29,6 +29,7 @@
 .schedule-search-button {
     width: 150px;
     margin: auto;
+    margin-top: 10px;
 }
 
 .schedule-game.highlight .schedule-game-link {
@@ -50,4 +51,10 @@
     position: fixed;
     top: 95%;
     left: 45%;
+}
+
+.spinner-border {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
 }

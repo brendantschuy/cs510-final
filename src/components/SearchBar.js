@@ -5,7 +5,7 @@ const SearchBar = ({ update }) =>
         <input
             type="text"
             className="schedule-search-input"
-            placeholder="search for a team"
+            placeholder="enter team name"
             style={{ textAlign: "center" }}
             onChange={update}
         ></input>

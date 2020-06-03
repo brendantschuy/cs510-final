@@ -20,7 +20,7 @@ const HomePage = () => {
         <div className="index-body-center col-md-4">
             <SearchBar update={updateSearch} />
             {redir && <Redirect to={`/teams/${search}`} />}
-            <button onClick={readyRedirect}>GO</button>
+            <button onClick={readyRedirect}>Search</button>
         </div>
         <div className="col-md-4"></div>
     </div>
