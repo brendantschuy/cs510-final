@@ -3,22 +3,22 @@ import '../styles/teams.css';
 
 const ConferencesPage = () => {
 
-    const [ data, setData ] = useState([]);
-    const [ loading, setLoading ] = useState(true);
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    const conferences = [
-        "American Athletic",
-        "ACC",
-        "Big 12",
-        "Big Ten",
-        "Conference USA",
-        "FBS Independents",
-        "Mid-American",
-        "Mountain West",
-        "Pac-12",
-        "SEC",
-        "Sun Belt"
-    ];
+    const conferences = {
+        "American Athletic": [],
+        "ACC": [],
+        "Big 12": [],
+        "Big Ten": [],
+        "Conference USA": [],
+        "FBS Independents": [],
+        "Mid-American": [],
+        "Mountain West": [],
+        "Pac-12": [],
+        "SEC": [],
+        "Sun Belt": []
+    };
 
     const year = 2019;
 
@@ -27,9 +27,14 @@ const ConferencesPage = () => {
         fetch(url)
             .then(res => res.json())
             .then(res => {
-                setData(res);
-                setLoading(false);
-                console.log(res);
+                res.forEach(team => {
+                    for (const conf in conferences) {
+                        if (conf === team.conference) {
+                            conferences[conf] = [...conferences[conf], team.school];
+                        }
+                    }
+                });
+                console.log(conferences);
             });
     }, []); //use empty array to avoid infinite loop
 
