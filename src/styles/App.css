@@ -30,7 +30,7 @@
 
 .index-header {
   height: 80px;
-  background-color: #555794;
+  background-color: #7d7fb5;
 }
 
 .index-header-center {
@@ -68,7 +68,7 @@
 
 .menu-nav-item {
   position: relative;
-  background-color: #555794;
+  background-color: #7d7fb5;
   height: 100%;
   flex: 1;
   text-align: center;
@@ -89,7 +89,7 @@
 }
 
 .menu-nav-item:hover {
-  background-color: #7F81B2;
+  background-color: #9b9cc5;
 }
 
 .menu-nav-dropdown {

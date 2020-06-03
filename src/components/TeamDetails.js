@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import Spinner from 'react-bootstrap/Spinner';
 
 import '../styles/teams.css';
+import { string } from 'prop-types';
 
 const TeamDetails = ({ colorPalette, match }) => {
 
@@ -34,7 +35,7 @@ const TeamDetails = ({ colorPalette, match }) => {
             .then(res => res.json())
             .then(res => {
                 const thisSchool = res.find(({ school }) =>
-                    school == teamName
+                    school == teamName.charAt(0).toUpperCase() + teamName.slice(1)
                 );
                 const { mascot, color, alt_color } = thisSchool;
                 const logoUrl = thisSchool.logos[0];
