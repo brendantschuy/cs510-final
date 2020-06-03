@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/brendantschuy/cs510-finalstatic/css/main.eab7a262.chunk.css",
+    "main.js": "/brendantschuy/cs510-finalstatic/js/main.ec06c823.chunk.js",
+    "main.js.map": "/brendantschuy/cs510-finalstatic/js/main.ec06c823.chunk.js.map",
+    "runtime-main.js": "/brendantschuy/cs510-finalstatic/js/runtime-main.96497e55.js",
+    "runtime-main.js.map": "/brendantschuy/cs510-finalstatic/js/runtime-main.96497e55.js.map",
+    "static/js/2.ac9651da.chunk.js": "/brendantschuy/cs510-finalstatic/js/2.ac9651da.chunk.js",
+    "static/js/2.ac9651da.chunk.js.map": "/brendantschuy/cs510-finalstatic/js/2.ac9651da.chunk.js.map",
+    "index.html": "/brendantschuy/cs510-finalindex.html",
+    "precache-manifest.74eb4293a6b1757df1f77080f547eb1c.js": "/brendantschuy/cs510-finalprecache-manifest.74eb4293a6b1757df1f77080f547eb1c.js",
+    "service-worker.js": "/brendantschuy/cs510-finalservice-worker.js",
+    "static/css/main.eab7a262.chunk.css.map": "/brendantschuy/cs510-finalstatic/css/main.eab7a262.chunk.css.map",
+    "static/js/2.ac9651da.chunk.js.LICENSE.txt": "/brendantschuy/cs510-finalstatic/js/2.ac9651da.chunk.js.LICENSE.txt",
+    "static/media/football.png": "/brendantschuy/cs510-finalstatic/media/football.cc65024d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.96497e55.js",
+    "static/js/2.ac9651da.chunk.js",
+    "static/css/main.eab7a262.chunk.css",
+    "static/js/main.ec06c823.chunk.js"
+  ]
+}
