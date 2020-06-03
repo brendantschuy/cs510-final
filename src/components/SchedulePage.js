@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import GameEvent from './GameEvent';
+import ReturnToTopButton from './ReturnToTopButton';
 import Spinner from 'react-bootstrap/Spinner'
 
 import '../styles/schedule.css';
@@ -58,11 +59,7 @@ const SchedulePage = () => {
                          : null}
                 />
             )}
-            <div className="return-to-top">
-                <button onClick={() => window.scrollTo(0, 0)}>
-                    Return to top
-                </button>
-            </div>
+            <ReturnToTopButton />
         </div>
     );
 };

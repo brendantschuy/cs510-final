@@ -1,6 +1,7 @@
 import React, { useEffect, useCallback, useState } from 'react';
 import TeamSelect from './TeamSelect';
 import TeamPanel from './TeamPanel';
+import ReturnToTopButton from './ReturnToTopButton';
 import Spinner from 'react-bootstrap/Spinner'
 
 import '../styles/teams.css';
@@ -118,6 +119,7 @@ const TeamsPage = () => {
                     return <TeamPanel props={team} />
                 })}
             </div>
+            <ReturnToTopButton />
         </div>
     );
 };
