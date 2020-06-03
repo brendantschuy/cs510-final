@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import HomePage from './components/HomePage';
 import RankingsPage from './components/RankingsPage';
@@ -14,15 +14,20 @@ import {
 import './styles/App.css';
 
 function App() {
+
+  const [teamColors, setTeamColors] = useState([]);
+
   return (
-    <div className="main">
+    <div className="main" style={{backgroundColor: `${teamColors[1]}`}}>
       <Router>
-        <Navbar />
+        <Navbar teamColors={teamColors} />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/rankings" component={RankingsPage} />
           <Route exact path="/teams" component={TeamsPage} />
-          <Route path="/teams/:teamName" component={TeamDetails} />
+          <Route 
+            path="/teams/:teamName"
+            render={props => <TeamDetails {...props} colorPalette={setTeamColors}/>} />
           <Route path="/schedule" component={SchedulePage} />
           <Route path="/conferences" component={ConferencesPage} />
         </Switch>

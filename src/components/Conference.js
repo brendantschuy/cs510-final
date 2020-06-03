@@ -1,15 +1,13 @@
 import React, { useEffect } from 'react';
 
 const Conference = ({ data }) => {
-
-    console.log("conf ddata = ", data[1]);
-
     return (
-        <div class="conference-data">
-            {data[0]}
-            <ul>
+        <div className="conference-data">
+            <span>{data[0]}</span>
+            <ul className="conference-data-list">
                 {data[1].map(team =>
-                    <li>{team}</li>
+                    <li>
+                    <a href={`/teams/${team.replace(" ", "%20")}`} className="link-no-decoration">{team}</a></li>
                 )}
             </ul>
         </div>

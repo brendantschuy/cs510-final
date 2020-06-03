@@ -28,8 +28,13 @@
     filter: brightness(20%) blur(2px);
 }
 
-.team-square a {
+.link-no-decoration {
+    color: black;
     text-decoration: none;
+}
+
+.link-no-decoration:hover {
+    color: black;
 }
 
 /* DETAILS */
@@ -85,8 +90,28 @@
     flex-wrap: wrap;
     height: 1000px;
     margin: auto;
+    padding-top: 20px;
 }
 
 .conference-data {
+    text-align: center;
     min-width: 400px;
+}
+
+.conference-data span {
+    font-weight: 700;
+}
+
+.conference-data-list {
+    background-color: #CCCCCC;
+    list-style-type: none;
+    padding-left: 0; /* this is how to solve the ul > li off-center problem!!*/
+}
+
+.conference-data-list li {
+    list-style-position: inside;
+}
+
+.conference-data-list li:nth-child(even) {
+    background-color: #DDDDDD;
 }

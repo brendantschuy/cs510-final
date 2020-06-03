@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import Conference from './Conference';
 import '../styles/teams.css';
+import ReturnToTopButton from './ReturnToTopButton';
 
 const ConferencesPage = () => {
 
@@ -37,7 +38,6 @@ const ConferencesPage = () => {
                 });
                 setData(conferences);
                 setLoading(false);
-                console.log(conferences);
             });
     }, []); //use empty array to avoid infinite loop
 
@@ -47,10 +47,8 @@ const ConferencesPage = () => {
 
     return (
         <div className="conferences-container">
-            {Object.entries(data).map(conf => {
-                // console.log("conf = ", conf);
-            return <Conference data={conf} />})}
-            Conference Page
+            {Object.entries(data).map(conf =>  <Conference data={conf} />)}
+            <ReturnToTopButton />
         </div>
     );
 };

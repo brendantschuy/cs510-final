@@ -25,6 +25,7 @@
   font-weight: 800;
   z-index: 1;
   margin: auto;
+  text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
 }
 
 .index-header {

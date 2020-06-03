@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import GameEvent from './GameEvent';
 import ReturnToTopButton from './ReturnToTopButton';
+import SearchBar from './SearchBar';
 import Spinner from 'react-bootstrap/Spinner'
 
 import '../styles/schedule.css';
@@ -34,22 +35,17 @@ const SchedulePage = () => {
 
     const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop);
     const executeScroll = () => scrollToRef(searchRef);
-    const updateSearchState = ({target: {value: query}}) => setSearchState(query.toLowerCase());
+    const updateSearchState = ({target: {value: query}}) => {
+        console.log("seach query = ", query);
+        setSearchState(query.toLowerCase());
+    };
     
 
     return (
         <div className="schedule-container">
             Upcoming games:
-            <div className="schedule-search">
-                <input
-                    type="text"
-                    className="schedule-search-input"
-                    placeholder="search for a team"
-                    style={{textAlign: "center"}}
-                    onChange={updateSearchState}
-                ></input>
-            </div>
-            <button class="schedule-search-button" onClick={executeScroll}>Find</button>
+            <SearchBar update={updateSearchState} />
+            <button className="schedule-search-button" onClick={executeScroll}>Find</button>
             {loading && <Spinner animation="border" role="status" />}
             {data.map(game =>
                 <GameEvent

@@ -23,8 +23,8 @@ const TeamsPage = () => {
 
     const conferences = [
         "(none)",
-        "American Athletic",
         "ACC",
+        "American Athletic",
         "Big 12",
         "Big Ten",
         "Conference USA",
