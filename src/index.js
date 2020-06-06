@@ -4,6 +4,9 @@ import './styles/index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+var axe = require('react-axe');
+axe(React, ReactDOM, 1000);
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

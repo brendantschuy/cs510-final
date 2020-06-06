@@ -106,10 +106,13 @@ const TeamsPage = () => {
     return (
         <div className="teams-container">
             <div className="teams-header">
-                <span style={{ float: "left" }}>Highlight:
+                <span className="teams-header-span">Highlight:
                     <TeamSelect opts={conferences} onSelect={highlightConferences} />
                 </span>
-                <span style={{ float: "right" }}>Sort by:
+                <span className="teams-header-span">
+                    Click any team to view their details.
+                </span>
+                <span className="teams-header-span-right">Sort by:
                     <TeamSelect opts={sortDirections} onSelect={sortDisplay} />
                 </span>
             </div>

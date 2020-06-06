@@ -117,3 +117,14 @@
 .conference-data-list li:nth-child(even) {
     background-color: #DDDDDD;
 }
+
+.teams-header-span {
+    float: left;
+    width: 40%;
+    margin-top: 20px;
+}
+
+.teams-header-span-right {
+    float: right;
+    margin-top: 20px;
+}

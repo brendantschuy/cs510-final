@@ -5,7 +5,7 @@ import Logo from './Logo';
 import '../styles/App.css';
 
 const Navbar = ({ teamColors }) =>
-    <nav>
+    <header>
         <div className="row index-header" style={{ backgroundColor: `${teamColors[0]}` }}>
             <div className="index-header-col col-md-5">
                 <NavItem label="RANKINGS" color={teamColors}>
@@ -39,6 +39,6 @@ const Navbar = ({ teamColors }) =>
                 </NavItem>
             </div>
         </div>
-    </nav>
+    </header>
 
 export default Navbar;

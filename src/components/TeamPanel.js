@@ -13,6 +13,7 @@ const TeamPanel = ({ props }) => {
                 backgroundColor: `${color}`,
                 borderColor: `${alt_color}`,
             }}
+            aria-label={`${school} details page`}
         >
             <a
                 href={`/teams/${school}`}

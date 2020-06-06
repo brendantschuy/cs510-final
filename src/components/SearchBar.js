@@ -8,6 +8,7 @@ const SearchBar = ({ update }) =>
             placeholder="enter team name"
             style={{ textAlign: "center" }}
             onChange={update}
+            aria-label="Search for details about a team."
         ></input>
     </div>
 

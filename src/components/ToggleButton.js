@@ -8,6 +8,7 @@ const ToggleButton = ({ text, toggle, isActive }) => {
         <button
             className={`${inactiveClass} ${isActive ? "active" : "inactive"}`}
             onClick={toggle}
+            aria-label={`Click to view ${text} poll.`}
         >
             {text}
         </button>

@@ -52,7 +52,7 @@ const TeamDetails = ({ colorPalette, match }) => {
     return (
         <div className="details-container">
             {loading && <Spinner animation="border" role="status" />}
-            <img className="details-logo" src={display[5]}></img>
+            <img className="details-logo" src={display[5]} alt={`Team logo for the ${display[2]} ${display[4]}`}></img>
             <p className="details-title">
                 <span className="details-heading">{display[2]}</span>
                 <span className="details-sub-heading">{display[4]}</span>

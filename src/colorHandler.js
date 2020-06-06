@@ -5,7 +5,7 @@ const colorHandler = {
      * Hex math is not fun in javascript.... */
     colorDiff: function (color1, color2) {
 
-        const threshold = 120;
+        const threshold = 170;
 
         color1 = color1 ? parseInt(color1.substr(1), 16) : color1;
         color2 = color2 ? parseInt(color2.substr(1), 16) : color2;
