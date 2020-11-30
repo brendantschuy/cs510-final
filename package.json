@@ -18,11 +18,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "homepage": "/",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -38,6 +41,7 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "react-axe": "^3.4.1"
   },
   "repository": {
@@ -49,6 +53,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/brendantschuy/cs510-final/issues"
-  },
-  "homepage": "/"
+  }
 }
